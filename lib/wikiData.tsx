@@ -1,6 +1,6 @@
 'use client';
 
-import { Star, Zap, Shield, Target, Zap as ZapIcon, Heart, Ghost, AlertTriangle, ShieldAlert, EyeOff, Droplets, Archive, Skull, Link, Info, HelpCircle, Move, Flame, Sparkles, Wand2, Wind } from 'lucide-react';
+import { Star, Zap, Shield, Target, Zap as ZapIcon, Heart, Ghost, AlertTriangle, ShieldAlert, EyeOff, Droplets, Archive, Skull, Link, Info, HelpCircle, Move, Flame, Sparkles, Wand2, Wind, Sword, Crosshair, Dumbbell } from 'lucide-react';
 
 export const WIKI_DATA: any = {
   "New to LonaRPG?": {
@@ -626,40 +626,133 @@ export const WIKI_DATA: any = {
         }
       },
       "Physical builds": {
-        title: "Physical Builds (Hướng dẫn Vật Lý)",
-        keywords: ["physical", "build", "warrior", "tank", "str", "com", "melee", "glass cannon"],
+        title: "Physical Builds (The Path of the Warrior)",
+        keywords: ["physical", "build", "warrior", "tank", "str", "com", "melee", "gladiator", "archer", "stealth"],
         content: {
           en: (
             <div className="space-y-8">
-              <div className="bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded text-gray-300 text-sm leading-relaxed">
-                <p>Physical builds rely on <strong>STR</strong> and <strong>COM</strong> stats. It branches into two main playstyles: the <strong>Tanker</strong> (1-Handed + Shield) and the <strong>Glass Cannon</strong> (2-Handed Kite).</p>
-              </div>
-              <div className="bg-gray-800 p-5 rounded-xl border border-blue-500/30 shadow-lg">
-                <h3 className="text-xl font-bold text-blue-400 mb-3">Tanker Build (1H + Shield)</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-gray-900 p-3 rounded border border-green-700/50">
-                    <strong className="text-green-400 text-sm">Advantages</strong>
-                    <ul className="list-disc pl-5 text-xs text-gray-400 mt-2 space-y-1">
-                      <li>Very high <strong>DEF</strong> and survivability.</li>
-                      <li><strong>Block</strong> skill from Metal Shield can stagger enemies.</li>
+              <p className="text-gray-300 text-lg border-l-4 border-blue-500 pl-4 bg-gray-800/50 py-2 italic">
+                &quot;Physical builds are the most versatile and straightforward. Master your blade and your body to survive.&quot;
+              </p>
+
+              {/* 1. Melee Tips */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Sword className="text-blue-400 w-6 h-6" /> 1. Melee Tips
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <ul className="list-disc pl-6 space-y-3 text-gray-300">
+                    <li><strong className="text-yellow-400">Stamina is King:</strong> Every action (attack, block, run) costs stamina. Never let it hit zero in a fight.</li>
+                    <li><strong className="text-blue-400">Range Advantage:</strong> Use spears or longswords to hit enemies before they can reach you.</li>
+                    <li><strong className="text-green-400">Positioning:</strong> Don&apos;t get surrounded. Use walls or corners to fight enemies one by one.</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 2. Combat Styles */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Target className="text-red-400 w-6 h-6" /> 2. Combat Styles
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700 shadow-lg">
+                    <h4 className="font-bold text-white mb-2 flex items-center gap-2"><Shield className="w-4 h-4 text-blue-400" /> Gladiator</h4>
+                    <p className="text-xs text-gray-400 mb-2">The classic Tanker. High STR and COM.</p>
+                    <ul className="text-xs text-gray-500 list-disc pl-4 space-y-1">
+                      <li>Use 1H Sword + Shield.</li>
+                      <li>High survivability.</li>
+                      <li>Reliant on blocking.</li>
                     </ul>
                   </div>
-                  <div className="bg-gray-900 p-3 rounded border border-red-700/50">
-                    <strong className="text-red-400 text-sm">Disadvantages</strong>
-                    <ul className="list-disc pl-5 text-xs text-gray-400 mt-2 space-y-1">
-                      <li>Lower damage output.</li>
-                      <li>Can be overwhelmed by mobs.</li>
+                  <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700 shadow-lg">
+                    <h4 className="font-bold text-white mb-2 flex items-center gap-2"><Crosshair className="w-4 h-4 text-green-400" /> Archer</h4>
+                    <p className="text-xs text-gray-400 mb-2">Ranged physical damage. High DEX.</p>
+                    <ul className="text-xs text-gray-500 list-disc pl-4 space-y-1">
+                      <li>Bows and Crossbows.</li>
+                      <li>Kite enemies from afar.</li>
+                      <li>Requires ammo management.</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700 shadow-lg">
+                    <h4 className="font-bold text-white mb-2 flex items-center gap-2"><EyeOff className="w-4 h-4 text-purple-400" /> Stealth</h4>
+                    <p className="text-xs text-gray-400 mb-2">Assassin playstyle. High DEX.</p>
+                    <ul className="text-xs text-gray-500 list-disc pl-4 space-y-1">
+                      <li>Daggers and Backstabs.</li>
+                      <li>Avoid direct combat.</li>
+                      <li>High burst damage.</li>
                     </ul>
                   </div>
                 </div>
-              </div>
+              </section>
+
+              {/* 3. Stats & Gear */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Dumbbell className="text-green-400 w-6 h-6" /> 3. Stats & Gear
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-bold text-blue-300 mb-2">Core Stats</h4>
+                      <ul className="text-sm text-gray-400 list-disc pl-4 space-y-1">
+                        <li><strong>STR:</strong> Increases physical damage.</li>
+                        <li><strong>COM:</strong> Increases accuracy and crit chance.</li>
+                        <li><strong>CON:</strong> Increases HP and Stamina.</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-yellow-300 mb-2">Equipment</h4>
+                      <ul className="text-sm text-gray-400 list-disc pl-4 space-y-1">
+                        <li><strong>Heavy Armor:</strong> High DEF but slows you down.</li>
+                        <li><strong>Light Armor:</strong> Low DEF but better mobility.</li>
+                        <li><strong>Shields:</strong> Essential for Gladiators.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           ),
           vi: (
             <div className="space-y-8">
-              <div className="bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded text-gray-300 text-sm leading-relaxed">
-                <p>Hướng Build Vật lý phụ thuộc lớn vào chỉ số <strong>STR</strong> và <strong>COM</strong>.</p>
-              </div>
+              <p className="text-gray-300 text-lg border-l-4 border-blue-500 pl-4 bg-gray-800/50 py-2 italic">
+                &quot;Build Vật lý là hướng đi đa dụng và trực diện nhất. Hãy làm chủ thanh kiếm và cơ thể để sinh tồn.&quot;
+              </p>
+
+              {/* 1. Mẹo Cận chiến */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Sword className="text-blue-400 w-6 h-6" /> 1. Mẹo Cận chiến
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700 text-gray-300">
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Thể lực là quan trọng nhất. Đừng để nó về 0 khi đang chiến đấu.</li>
+                    <li>Tận dụng tầm đánh của thương hoặc trường kiếm.</li>
+                    <li>Sử dụng địa hình để tránh bị bao vây.</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 2. Các Phong cách Chiến đấu */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Target className="text-red-400 w-6 h-6" /> 2. Phong cách Chiến đấu
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700 shadow-lg">
+                    <h4 className="font-bold text-white mb-2">Võ sĩ (Gladiator)</h4>
+                    <p className="text-xs text-gray-400">Chống chịu tốt. STR và COM cao.</p>
+                  </div>
+                  <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700 shadow-lg">
+                    <h4 className="font-bold text-white mb-2">Cung thủ (Archer)</h4>
+                    <p className="text-xs text-gray-400">Tầm xa. DEX cao.</p>
+                  </div>
+                  <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700 shadow-lg">
+                    <h4 className="font-bold text-white mb-2">Sát thủ (Stealth)</h4>
+                    <p className="text-xs text-gray-400">Ẩn nấp và đâm sau lưng.</p>
+                  </div>
+                </div>
+              </section>
             </div>
           )
         }
