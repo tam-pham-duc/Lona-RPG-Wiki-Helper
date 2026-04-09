@@ -1,0 +1,104 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: users
+    // Document ID: {uid}
+    // Fields:
+    //   - uid: string (required, immutable)
+    //   - email: string (required)
+    //   - karma: number (required)
+    //   - inGameDays: number (required)
+    //   - updatedAt: timestamp (optional)
+    //
+    // Collection: users/{uid}/inventory
+    // Document ID: {itemKey}
+    // Fields:
+    //   - uid: string (required, immutable)
+    //   - itemKey: string (required, immutable)
+    //   - collected: bool (required)
+    //   - updatedAt: timestamp (optional)
+    //
+    // Collection: users/{uid}/medical
+    // Document ID: {stateId}
+    // Fields:
+    //   - uid: string (required, immutable)
+    //   - stateId: string (required, immutable)
+    //   - active: bool (required)
+    //   - updatedAt: timestamp (optional)
+    //
+    // Collection: users/{uid}/chats/{chatId}/messages
+    // Document ID: {messageId}
+    // Fields:
+    //   - uid: string (required, immutable)
+    //   - role: string (required, enum: ['user', 'model'])
+    //   - content: string (required)
+    //   - timestamp: timestamp (required)
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isValidTimestamp(ts) {
+      return ts is timestamp;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid) 
+        && request.resource.data.uid == uid
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.karma is number
+        && request.resource.data.inGameDays is number;
+      allow update: if isOwner(uid)
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.karma is number
+        && request.resource.data.inGameDays is number;
+
+      match /inventory/{itemKey} {
+        allow read: if isOwner(uid);
+        allow write: if isOwner(uid)
+          && request.resource.data.uid == uid
+          && request.resource.data.itemKey == itemKey
+          && request.resource.data.collected is bool;
+      }
+
+      match /medical/{stateId} {
+        allow read: if isOwner(uid);
+        allow write: if isOwner(uid)
+          && request.resource.data.uid == uid
+          && request.resource.data.stateId == stateId
+          && request.resource.data.active is bool;
+      }
+
+      match /chats/{chatId}/messages/{messageId} {
+        allow read: if isOwner(uid);
+        allow create: if isOwner(uid)
+          && request.resource.data.uid == uid
+          && request.resource.data.role in ['user', 'model']
+          && request.resource.data.content is string
+          && request.resource.data.content.size() < 10000;
+      }
+    }
+  }
+}

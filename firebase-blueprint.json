@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Stores user-specific game progress and settings.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "karma": { "type": "number" },
+        "inGameDays": { "type": "number" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "karma", "inGameDays"]
+    },
+    "InventoryItem": {
+      "title": "Inventory Item",
+      "description": "Represents a collected item in the user's inventory.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "itemKey": { "type": "string" },
+        "collected": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "itemKey", "collected"]
+    },
+    "MedicalState": {
+      "title": "Medical State",
+      "description": "Represents a medical condition affecting the character.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "stateId": { "type": "string" },
+        "active": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "stateId", "active"]
+    },
+    "ChatMessage": {
+      "title": "Chat Message",
+      "description": "A single message in a chat conversation.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "model"] },
+        "content": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "role", "content", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "UserProfile",
+      "description": "User profile document."
+    },
+    "/users/{uid}/inventory/{itemKey}": {
+      "schema": "InventoryItem",
+      "description": "User's inventory items."
+    },
+    "/users/{uid}/medical/{stateId}": {
+      "schema": "MedicalState",
+      "description": "User's medical states."
+    },
+    "/users/{uid}/chats/{chatId}/messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Chat messages for a specific conversation."
+    }
+  }
+}
