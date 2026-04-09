@@ -1,6 +1,6 @@
 'use client';
 
-import { Star, Zap, Shield, Target, Zap as ZapIcon, Heart, Ghost, AlertTriangle, ShieldAlert, EyeOff, Droplets, Archive, Skull, Link, Info, HelpCircle, Move } from 'lucide-react';
+import { Star, Zap, Shield, Target, Zap as ZapIcon, Heart, Ghost, AlertTriangle, ShieldAlert, EyeOff, Droplets, Archive, Skull, Link, Info, HelpCircle, Move, Flame, Sparkles, Wand2, Wind } from 'lucide-react';
 
 export const WIKI_DATA: any = {
   "New to LonaRPG?": {
@@ -399,8 +399,232 @@ export const WIKI_DATA: any = {
   },
   "Class Builds": {
     pages: {
-      "Succubus builds": { title: "Succubus Builds", content: "How to play as a Succubus..." },
-      "Magic builds": { title: "Magic Builds", content: "Harness the power of magic..." },
+      "Succubus builds": {
+        title: "Succubus Builds (The Path of Pleasure & Pain)",
+        keywords: ["succubus", "build", "companion", "stealth", "abomination", "seawitch", "juicing", "sex skills"],
+        content: {
+          en: (
+            <div className="space-y-8">
+              <p className="text-gray-300 text-lg border-l-4 border-pink-500 pl-4 bg-gray-800/50 py-2 italic">
+                &quot;The most complex class in LonaRPG. Master the art of juicing and companion management to dominate the wasteland.&quot;
+              </p>
+
+              {/* 1. Healer/Companion Build */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Heart className="text-pink-400 w-6 h-6 fill-current" /> 1. Healer/Companion Build
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <p className="text-gray-300 mb-4">Focuses on keeping Lona safe while powerful companions do the heavy lifting.</p>
+                  <ul className="list-disc pl-6 space-y-3 text-gray-300">
+                    <li><strong className="text-pink-400">Core Stats:</strong> High <strong>CON</strong> for survival and <strong>INT</strong> for healing effectiveness.</li>
+                    <li><strong className="text-blue-400">Strategy:</strong> Hire <strong>Treasure Hunter</strong> or <strong>Doggy</strong>. Use <strong>Heal</strong> and <strong>Support</strong> skills frequently.</li>
+                    <li><strong className="text-green-400">Advantages:</strong> Very safe playstyle. Can clear hard content early with the right allies.</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 2. Stealth Build */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <EyeOff className="text-gray-400 w-6 h-6" /> 2. Stealth Build (Ninja)
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <p className="text-gray-300 mb-4">Avoid combat entirely. Perfect for speedrunning or high-difficulty survival.</p>
+                  <ul className="list-disc pl-6 space-y-3 text-gray-300">
+                    <li><strong className="text-yellow-400">Core Stats:</strong> Max <strong>DEX</strong> for movement speed and stealth rating.</li>
+                    <li><strong className="text-purple-400">Key Items:</strong> <strong>Stealth Cloak</strong> and <strong>Light Boots</strong>.</li>
+                    <li><strong className="text-red-400">Advantages:</strong> Can bypass almost all enemies. Great for looting dangerous areas without a fight.</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 3. Abomination Succubus */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Skull className="text-red-500 w-6 h-6" /> 3. Abomination Succubus
+                </h3>
+                <div className="bg-red-900/10 p-5 rounded-xl border border-red-900/30">
+                  <p className="text-gray-300 mb-4">A high-risk build that embraces mutations for overwhelming power.</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-gray-900/50 p-3 rounded border border-red-900/20">
+                      <h4 className="font-bold text-red-400 text-sm mb-1">Requirements</h4>
+                      <p className="text-xs text-gray-400">High <strong>STR</strong> and <strong>CON</strong>. Requires specific mutations from Deep Ones or Goblins.</p>
+                    </div>
+                    <div className="bg-gray-900/50 p-3 rounded border border-red-900/20">
+                      <h4 className="font-bold text-red-400 text-sm mb-1">Playstyle</h4>
+                      <p className="text-xs text-gray-400">Aggressive melee combat. Use &quot;Juicing&quot; to recover stamina mid-fight.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* 4. Seawitch Succubus */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Droplets className="text-blue-500 w-6 h-6" /> 4. Seawitch Succubus
+                </h3>
+                <div className="bg-blue-900/10 p-5 rounded-xl border border-blue-900/30">
+                  <p className="text-gray-300 mb-4">Specialized in water-based survival and unique aquatic traits.</p>
+                  <ul className="list-disc pl-6 space-y-2 text-sm text-gray-300">
+                    <li>Best played with <strong>Fishkind</strong> related traits.</li>
+                    <li>Excellent at coastal exploration and fishing.</li>
+                    <li>High resistance to wetness-related debuffs.</li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          ),
+          vi: (
+            <div className="space-y-8">
+              <p className="text-gray-300 text-lg border-l-4 border-pink-500 pl-4 bg-gray-800/50 py-2 italic">
+                &quot;Lớp nhân vật phức tạp nhất trong LonaRPG. Làm chủ nghệ thuật &apos;Juicing&apos; và quản lý đồng đội để thống trị vùng đất hoang.&quot;
+              </p>
+
+              {/* 1. Build Hỗ trợ/Đồng đội */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Heart className="text-pink-400 w-6 h-6 fill-current" /> 1. Build Hỗ trợ/Đồng đội
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <p className="text-gray-300 mb-4">Tập trung vào việc giữ an toàn cho Lona trong khi các đồng đội mạnh mẽ chiến đấu.</p>
+                  <ul className="list-disc pl-6 space-y-2 text-gray-300">
+                    <li>Chỉ số chính: <strong>CON</strong> cao để sinh tồn và <strong>INT</strong> để hồi máu hiệu quả.</li>
+                    <li>Chiến thuật: Thuê <strong>Treasure Hunter</strong> hoặc <strong>Doggy</strong>.</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 2. Build Ẩn nấp (Stealth) */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <EyeOff className="text-gray-400 w-6 h-6" /> 2. Build Ẩn nấp (Stealth)
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <p className="text-gray-300 mb-4">Tránh giao tranh hoàn toàn. Hoàn hảo để chạy nhanh hoặc sinh tồn ở độ khó cao.</p>
+                </div>
+              </section>
+            </div>
+          )
+        }
+      },
+      "Magic builds": {
+        title: "Magic Builds (Arcane Supremacy)",
+        keywords: ["magic", "build", "mage", "explosion", "thunder", "hunter", "int", "sur", "spells"],
+        content: {
+          en: (
+            <div className="space-y-8">
+              <p className="text-gray-300 text-lg border-l-4 border-purple-500 pl-4 bg-gray-800/50 py-2 italic">
+                &quot;Magic damage is decreased by the enemy&apos;s SUR. Master the elements to rain destruction from afar.&quot;
+              </p>
+
+              {/* Pros & Cons */}
+              <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-green-900/10 p-4 rounded-xl border border-green-900/30">
+                  <h4 className="font-bold text-green-400 mb-2 flex items-center gap-2"><Sparkles className="w-4 h-4" /> Pros</h4>
+                  <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1">
+                    <li>Massive Area of Effect (AOE) damage.</li>
+                    <li>Bypasses physical defense (DEF).</li>
+                    <li>Safest playstyle with high range.</li>
+                  </ul>
+                </div>
+                <div className="bg-red-900/10 p-4 rounded-xl border border-red-900/30">
+                  <h4 className="font-bold text-red-400 mb-2 flex items-center gap-2"><AlertTriangle className="w-4 h-4" /> Cons</h4>
+                  <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1">
+                    <li>Very high Stamina/Mana consumption.</li>
+                    <li>Extremely fragile (Low HP/DEF).</li>
+                    <li>Heavily dependent on specific items.</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 1. EX-PLOOOOSION Mage */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Flame className="text-orange-500 w-6 h-6" /> 1. EX-PLOOOOSION Mage
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <p className="text-gray-300 mb-4">The ultimate glass cannon. Focuses on fire magic and massive explosions.</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-gray-900/50 p-3 rounded border border-orange-900/20">
+                      <h4 className="font-bold text-orange-400 text-sm mb-1">Required Stats</h4>
+                      <p className="text-xs text-gray-400">INT 20+, CON 15+. Maximize Magic Power.</p>
+                    </div>
+                    <div className="bg-gray-900/50 p-3 rounded border border-orange-900/20">
+                      <h4 className="font-bold text-orange-400 text-sm mb-1">Key Items</h4>
+                      <p className="text-xs text-gray-400">Fire Staff, Explosive Potions, Magic Robes.</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-400 mt-4 italic">Tip: Use terrain to bottleneck enemies before unleashing an explosion.</p>
+                </div>
+              </section>
+
+              {/* 2. Thunder Mage */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <ZapIcon className="text-blue-400 w-6 h-6" /> 2. Thunder Mage
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <p className="text-gray-300 mb-4">Specializes in crowd control and high single-target burst damage.</p>
+                  <ul className="list-disc pl-6 space-y-2 text-sm text-gray-300">
+                    <li><strong className="text-blue-400">Stun Lock:</strong> Lightning spells have a high chance to stun enemies.</li>
+                    <li><strong className="text-blue-400">Chain Lightning:</strong> Perfect for clearing groups of weaker foes.</li>
+                    <li><strong className="text-blue-400">DEX Synergy:</strong> Higher DEX allows for faster casting and better kiting.</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 3. Magic Hunter */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Wand2 className="text-purple-400 w-6 h-6" /> 3. Magic Hunter
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <p className="text-gray-300 mb-4">A utility-focused build that combines magic with traditional hunting tools.</p>
+                  <p className="text-sm text-gray-400">Uses utility spells like <strong>Light</strong>, <strong>Heal</strong>, and <strong>Magic Arrow</strong> to support physical combat or kiting.</p>
+                </div>
+              </section>
+            </div>
+          ),
+          vi: (
+            <div className="space-y-8">
+              <p className="text-gray-300 text-lg border-l-4 border-purple-500 pl-4 bg-gray-800/50 py-2 italic">
+                &quot;Sát thương phép thuật bị giảm bởi SUR của kẻ thù. Làm chủ các nguyên tố để hủy diệt từ xa.&quot;
+              </p>
+
+              {/* Ưu & Nhược điểm */}
+              <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-green-900/10 p-4 rounded-xl border border-green-900/30">
+                  <h4 className="font-bold text-green-400 mb-2 flex items-center gap-2"><Sparkles className="w-4 h-4" /> Ưu điểm</h4>
+                  <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1">
+                    <li>Sát thương diện rộng (AOE) cực lớn.</li>
+                    <li>Bỏ qua phòng thủ vật lý (DEF).</li>
+                    <li>Lối chơi an toàn với tầm đánh xa.</li>
+                  </ul>
+                </div>
+                <div className="bg-red-900/10 p-4 rounded-xl border border-red-900/30">
+                  <h4 className="font-bold text-red-400 mb-2 flex items-center gap-2"><AlertTriangle className="w-4 h-4" /> Nhược điểm</h4>
+                  <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1">
+                    <li>Tiêu tốn cực nhiều Stamina/Mana.</li>
+                    <li>Rất mỏng manh (HP/DEF thấp).</li>
+                    <li>Phụ thuộc nhiều vào trang bị cụ thể.</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 1. Pháp sư Bùng nổ */}
+              <section className="space-y-4">
+                <h3 className="text-2xl font-bold text-white border-b border-gray-700 pb-2 flex items-center gap-3">
+                  <Flame className="text-orange-500 w-6 h-6" /> 1. Pháp sư Bùng nổ (EX-PLOOOOSION)
+                </h3>
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700">
+                  <p className="text-gray-300 mb-4">Đỉnh cao của &quot;Glass Cannon&quot;. Tập trung vào hỏa thuật và những vụ nổ lớn.</p>
+                </div>
+              </section>
+            </div>
+          )
+        }
+      },
       "Physical builds": {
         title: "Physical Builds (Hướng dẫn Vật Lý)",
         keywords: ["physical", "build", "warrior", "tank", "str", "com", "melee", "glass cannon"],
